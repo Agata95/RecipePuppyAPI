@@ -23,9 +23,15 @@ public class ScannerContentLoader {
     }
 
 
-    public String askAboutPage(){
+    public String askAboutPage() {
         System.out.println("Did you find your recipe?");
         String linia = scanner.nextLine();
+        return linia;
+    }
+
+    public int askAboutNoRecipe() {
+        System.out.println("Number your recipe is: ");
+        int linia = scanner.nextInt();
         return linia;
     }
 }
