@@ -1,5 +1,7 @@
 package com.javagda25;
 
+import com.javagda25.api.RecipeResponse;
+
 public class Main {
     public static void main(String[] args) {
         ScannerContentLoader scannerContentLoader = new ScannerContentLoader();
@@ -17,9 +19,11 @@ public class Main {
         System.out.println(requestURL);
 
         RecipePuppyAPI api = new RecipePuppyAPI();
+        RecipeResponse response = api.loadURLbyInputStream(requestURL);
 
         System.out.println("\n Your recipes list: \n");
-        api.loadURLbyInputStream(requestURL).getResults().forEach(System.out::println);
+        System.out.println(response.toString());
+
 
         additionalFunctions.loadNextPage(requestURL);
     }
